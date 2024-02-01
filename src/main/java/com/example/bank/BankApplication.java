@@ -26,20 +26,7 @@ public class BankApplication {
 
     public void exec(){
 
-        Klient k1 = new Klient(100000,"Damian", "Argentyński", "123455678912345", "QD11");
-        Klient k2 = new Klient(200000,"Janusz", "Zielonoskory", "123455678954321", "AA22");
-        //System.out.println(k1);
-        accountVault.addClient(k1);
-        accountVault.addClient(k2);
 
-
-        TransferReceipt n2 = transferOut.MakeATransfer("AA22", 1000);
-        System.out.println(n2.getStatus());
-        transferIn.MakeATransfer("fdssfd", 10000).printReceipt();
-        //nie wypłaci wiecej niz ma
-        transferOut.MakeATransfer("AA22",100000000);
-        clientData.Show("QD11");
-        clientData.Show("AA22");
     }
 
 }

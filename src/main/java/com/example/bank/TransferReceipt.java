@@ -29,7 +29,9 @@ public class TransferReceipt {
     public void setValue(double value) {
         this.value = value;
     }
-    public void printReceipt(){
-        System.out.println("Amount of money transfered: "+ this.value + " Current balance: "+ this.currentBalance + " Operation status: " + this.S);
+    public String printReceipt(){
+        String s = "Amount of money transfered: "+ this.value + " Current balance: "+ this.currentBalance + " Operation status: " + this.S;
+        System.out.println(s);
+        return s;
     }
 }
