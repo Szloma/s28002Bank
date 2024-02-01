@@ -25,6 +25,7 @@ class AccountVaultTest {
         String id = "33AA";
         Klient k1 = new Klient(balance,imie, nazwisko, nrKonta,id);
         accountVault.addClient(k1);
+        assertEquals(accountVault.findClientById("33AA").getID(), "33AA");
 
     }
     @Test
@@ -41,7 +42,11 @@ class AccountVaultTest {
         String nrKonta2 = "33333";
         String id2 = "77AA";
         Klient k2 = new Klient(balance2,imie2, nazwisko2, nrKonta2,id2);
+        accountVault.addClient(k1);
         accountVault.addClient(k2);
+        assertEquals(accountVault.findClientById("11AA").getID(), "11AA");
+        assertEquals(accountVault.findClientById("77AA").getID(), "77AA");
+
     }
 
 }
