@@ -25,6 +25,7 @@ public class BankApplication {
     }
 
     public void exec(){
+
         Klient k1 = new Klient(100000,"Damian", "Argentyński", "123455678912345", "QD11");
         Klient k2 = new Klient(200000,"Janusz", "Zielonoskory", "123455678954321", "AA22");
         //System.out.println(k1);

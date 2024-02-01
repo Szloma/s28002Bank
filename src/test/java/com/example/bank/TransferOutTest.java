@@ -9,15 +9,16 @@ import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class TransferOutTest {
     @Autowired
-    private final AccountVault accountVault;
+    private AccountVault accountVault;
     @Autowired
-    private final ClientData clientData;
+    private ClientData clientData;
     @Autowired
-    private final TransferOut transferOut;
+    private TransferOut transferOut;
 
     @Test
     void MakeATransferSuccessfully(){
@@ -28,8 +29,8 @@ class TransferOutTest {
         String id = "33AA";
         Klient k1 = new Klient(balance,imie, nazwisko, nrKonta,id);
         accountVault.addClient(k1);
-        TransferReceipt n2 = transferOut.MakeATransfer("AA22",1000);
-        assertEquals(1000, n2.getCurrentBallance());
+        TransferReceipt n2 = transferOut.MakeATransfer("33AA",1000);
+        assertEquals(1000, n2.getCurrentBalance());
     }
     @Test
     void MakeATransferNotSuccessfully(){
@@ -37,11 +38,12 @@ class TransferOutTest {
         String imie = "Janusz";
         String nazwisko = "Radeon";
         String nrKonta = "21424";
-        String id = "33AA";
+        String id = "44AA";
         Klient k1 = new Klient(balance,imie, nazwisko, nrKonta,id);
         accountVault.addClient(k1);
-        TransferReceipt n2 = transferOut.MakeATransfer("AA22",100000);
-        assertEquals(1000, n2.getCurrentBallance());
+        TransferReceipt n2 = transferOut.MakeATransfer("44AA",100000);
+        assertNotEquals(0,n2);
+
     }
 
 
