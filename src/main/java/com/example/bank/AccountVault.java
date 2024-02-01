@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class AccountVault {
-    private List<Klient> ListaKont = new ArrayList<>();
+    private final List<Klient> ListaKont = new ArrayList<>();
 
     public void addClient (Klient client)
     {
